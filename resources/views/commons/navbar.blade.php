@@ -10,10 +10,17 @@
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
-                {{-- ログインページへのリンク --}}
-                <li class="nav-item"><a href="#" class="nav-link">ログインする</a></li>
-                {{-- 会員登録ページへのリンク --}}
-                <li>{!! link_to_route('signup.get','会員登録する',[],['class' => 'nav-link']) !!}</li>
+                @if(Auth::check())
+                    {{-- アカウント一覧ページへのリンク --}}
+                    <li class="nav-item"><a href="#" class="nav-link">アカウント一覧</a></li>
+                    {{-- ログアウトへのリンク --}}
+                    <li>{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
+                @else
+                    {{-- ログインページへのリンク --}}
+                    <li class="nav-item"><a href="#" class="nav-link">ログインする</a></li>
+                    {{-- 会員登録ページへのリンク --}}
+                    <li>{!! link_to_route('signup.get','会員登録する',[],['class' => 'nav-link']) !!}</li>
+                @endif
             </ul>
         </div>
     </nav>

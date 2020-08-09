@@ -25,11 +25,11 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', 'マスターパスワード（確認用）') !!}
-                    {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+                    {!! Form::label('master_password_confirmation', 'マスターパスワード（確認用）') !!}
+                    {!! Form::password('master_password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('会員登録する', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
         </div>
     </div>
