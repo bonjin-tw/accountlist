@@ -15,15 +15,12 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('master_password', 'マスターパスワード') !!}
-                    {!! Form::password('master_password', ['class' => 'form-control']) !!}
+                    {!! Form::label('password', 'マスターパスワード') !!}
+                    {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
                 {!! Form::submit('ログインする', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
-
-            {{-- ユーザ登録ページへのリンク --}}
-            <p class="mt-2">New user? {!! link_to_route('signup.get', 'Sign up now!') !!}</p>
         </div>
     </div>
 @endsection

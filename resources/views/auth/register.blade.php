@@ -20,13 +20,13 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('master_password', 'マスターパスワード') !!}
-                    {!! Form::password('master_password', ['class' => 'form-control']) !!}
+                    {!! Form::label('password', 'マスターパスワード') !!}
+                    {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('master_password_confirmation', 'マスターパスワード（確認用）') !!}
-                    {!! Form::password('master_password_confirmation', ['class' => 'form-control']) !!}
+                    {!! Form::label('password_confirmation', 'マスターパスワード（確認用）') !!}
+                    {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 
                 {!! Form::submit('会員登録する', ['class' => 'btn btn-primary btn-block']) !!}

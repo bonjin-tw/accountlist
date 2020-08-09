@@ -17,7 +17,7 @@
                     <li>{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
                 @else
                     {{-- ログインページへのリンク --}}
-                    <li class="nav-item"><a href="#" class="nav-link">ログインする</a></li>
+                    <li class="nav-item">{!! link_to_route('login','ログインする',[],['class' => 'nav-link']) !!}</li>
                     {{-- 会員登録ページへのリンク --}}
                     <li>{!! link_to_route('signup.get','会員登録する',[],['class' => 'nav-link']) !!}</li>
                 @endif
