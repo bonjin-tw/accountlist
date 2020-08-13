@@ -12,7 +12,7 @@
         <div class="col-sm-8">
             <ul class="nav nav-tabs nav-justified mb-3">
                 {{-- アカウント一覧タブ --}}
-                <li class="nav-item"><a href="#" class="nav-link">Followers</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">アカウント一覧</a></li>
             </ul>
         </div>
     </div>
