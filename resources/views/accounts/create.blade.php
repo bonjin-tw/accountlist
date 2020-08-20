@@ -22,7 +22,7 @@
                     
                 <div class="form-group">
                     {!! Form::label('account_password','パスワード') !!}
-                    {!! Form::text('account_password',null,['class' => 'form-control']) !!}
+                    {!! Form::password('account_password',['class' => 'form-control']) !!}
                 </div>
                 
                 {!! Form::submit('追加する',['class' => 'btn btn-primary']) !!}
