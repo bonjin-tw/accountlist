@@ -3,3 +3,15 @@
 .password_on{
     display:none;
 }
+
+#top_password_forgot{
+    margin-top:14px;
+}
+
+.sideBySide{
+    display:flex;
+}
+
+.btn-margin{
+    margin-right:5px;
+}

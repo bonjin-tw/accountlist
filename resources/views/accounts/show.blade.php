@@ -26,15 +26,17 @@
                         {!! Form::label('account_password','パスワード') !!}
                         {!! Form::password('account_password',['class' => 'form-control']) !!}
                     </div>
-                    
-                    {!! Form::submit('更新する',['class' => 'btn btn-primary']) !!}
-                    
-                {!! Form::close() !!}
-                
-                {{-- アカウント削除ボタンのフォーム --}}
-                {!! Form::open(['route' => ['accounts.destroy',$account->id],'method' => 'delete']) !!}
-                    {!! Form::submit('削除する',['class' => 'btn btn-danger']) !!}
-                {!! Form::close() !!}
+ 
+                    <div class="sideBySide">
+                        {!! Form::submit('更新する',['class' => 'btn btn-primary btn-margin']) !!}
+                        
+                        {!! Form::close() !!}
+                        
+                        {{-- アカウント削除ボタンのフォーム --}}
+                        {!! Form::open(['route' => ['accounts.destroy',$account->id],'method' => 'delete']) !!}
+                            {!! Form::submit('削除する',['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
+                    </div>
             </div>
         </div>
     @endif

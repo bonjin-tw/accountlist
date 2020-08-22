@@ -25,7 +25,7 @@
                 {{-- 会員登録ページへのリンク --}}
                 {!! link_to_route('signup.get','会員登録する',[],['class' => 'btn btn-lg btn-primary']) !!}
                 
-                <p>
+                <p id="top_password_forgot">
                     {{-- パスワードを忘れた方へページへのリンク --}}
                     {!! link_to_route('password.request','パスワードを忘れた方へ') !!}
                 </p>
