@@ -10,7 +10,7 @@
                 {!! link_to_route('accounts.create','アカウント追加',[],['class' => 'btn btn-primary']) !!}
             </p>
             {{-- アカウント一覧 --}}
-            @include('accounts.accounts');
+            @include('accounts.accounts')
         </div>
     @else
         <div class="center">
@@ -24,6 +24,11 @@
                 {!! link_to_route('login','ログインする',[],['class' => 'btn btn-lg btn-primary']) !!}
                 {{-- 会員登録ページへのリンク --}}
                 {!! link_to_route('signup.get','会員登録する',[],['class' => 'btn btn-lg btn-primary']) !!}
+                
+                <p>
+                    {{-- パスワードを忘れた方へページへのリンク --}}
+                    {!! link_to_route('password.request','パスワードを忘れた方へ') !!}
+                </p>
             </div>
         </div>
     @endif

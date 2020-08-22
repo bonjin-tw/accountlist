@@ -12,7 +12,7 @@
             <ul class="navbar-nav">
                 @if(Auth::check())
                     {{-- アカウント一覧ページへのリンク --}}
-                    <li class="nav-item"><a href="#" class="nav-link">アカウント一覧</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">アカウント一覧</a></li>
                     {{-- ログアウトへのリンク --}}
                     <li>{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
                 @else

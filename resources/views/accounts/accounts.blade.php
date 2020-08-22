@@ -10,11 +10,15 @@
         </thead>
         
         <tbody>
+        <?php $i = 0; ?>
         @foreach ($accounts as $account)
             <tr>
                 <td>{{ $account->account_name }}</td>
                 <td>{{ $account->account_id }}</td>
-                <td>{{ $account->account_password }}</td>
+                <td>
+                    <span class="password_on">{{ $account->account_password }}</span>
+                    <span class="password_off btn btn-secondary btn-sm">パスワードを表示</span>
+                </td>
                 <td>
                     @if(Auth::id() == $account->user_id)
                         {!! Form::open(['route' => ['accounts.show',$account->id],'method' => 'get']) !!}
