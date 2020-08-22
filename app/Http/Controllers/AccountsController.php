@@ -80,16 +80,15 @@ class AccountsController extends Controller
         // idの値でアカウントを検索して取得
         $account = \App\Account::findOrFail($id);
         
-        // アカウント詳細ビューでそれを表示
-        return view('accounts.show',[
-            'account' => $account,
-        ]);
-    }
-    
-    // getでaccounts/id/editにアクセスされた場合の「更新画面表示処理」
-    public function edit($id)
-    {
-        
+        // 認証済みユーザ（閲覧者）がそのアカウントの所有者である場合は、アカウント詳細ビューでそれを表示
+        if(\Auth::id() === $account->user_id){
+            return view('accounts.show',[
+                'account' => $account,
+            ]);
+        }else{
+            // アカウントの所有者でない場合はトップページにリダイレクト
+            return redirect('/');
+        }
     }
     
     // putまたはpatchでaccounts/idにアクセスされた場合の「更新処理」
@@ -98,11 +97,13 @@ class AccountsController extends Controller
         // idの値でアカウントを検索して取得
         $account = \App\Account::findOrFail($id);
         
-        // アカウントを更新
-        $account->account_name = $request->account_name;
-        $account->account_id = $request->account_id;
-        $account->account_password = $request->account_password;
-        $account->save();
+        // 認証済みユーザ（閲覧者）がそのアカウントの所有者である場合は、アカウントを更新
+        if(\Auth::id() === $account->user_id){
+            $account->account_name = $request->account_name;
+            $account->account_id = $request->account_id;
+            $account->account_password = $request->account_password;
+            $account->save();
+        }
         
         // トップページへリダイレクトさせる
         return redirect('/');
